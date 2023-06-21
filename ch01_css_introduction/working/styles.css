@@ -32,3 +32,74 @@ ID Selector
 /*
 # 1.6.2 Combinators
 */
+/*
+Descendant Combinator (space)
+Child Combinator (>)
+*/
+.list > li {
+  color: crimson;
+}
+
+.list > li ul {
+  color: initial;
+}
+
+/*
+Adjacent Sibling Combinator (+)
+*/
+header + p {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/*
+General Sibling Combinator (~)
+*/
+header ~ img 
+  border: 4px solid crimson;
+}
+
+/*
+# 1.6.3 Pseudo-class and pseudo-element selectors
+*/
+
+/*
+Pseudo-class
+*/
+a:link {
+  color: #1d70b8;
+}
+
+a:visited {
+  color: #4c2c92;
+}
+
+a:hover {
+  color: #003078;
+}
+
+a:focus {
+  outline: solid 1px crimson;
+}
+
+/*
+Pseudo-element
+*/
+header + p::first-letter {
+  color: crimson;
+  font-style: italic;
+}
+
+/*
+# 1.6.4 Attribute value selectors
+*/
+[lang="it"]::before {
+  content: "🏳️‍🌈";
+}
+
+/*
+# 1.6.5 Universal Selector
+*/
+* {
+  font-family: sans-serif;
+}
