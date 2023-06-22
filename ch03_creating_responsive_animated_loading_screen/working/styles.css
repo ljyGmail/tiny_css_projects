@@ -13,12 +13,11 @@ section {
   margin: 40px auto;
 
   /* Typography */
-  font: 300 100% 'Roboto', sans-serif;
+  font: 300 100% "Roboto", sans-serif;
   text-align: center;
 
   color: #ffffff;
 }
-
 
 h1 {
   font-size: 4.5vw;
@@ -29,4 +28,88 @@ h1 {
 p {
   font-size: 2.8vw;
   margin-top: 0;
+}
+
+/*
+# 3.3. Applying styles to SVGs
+## 3.4.5 The anmation-delay property
+*/
+rect:nth-child(1) {
+  fill: #1a9f8c;
+  animation-delay: 0;
+}
+rect:nth-child(2) {
+  fill: #1eab8d;
+  animation-delay: 200ms;
+}
+rect:nth-child(3) {
+  fill: #20b38e;
+  animation-delay: 400ms;
+}
+rect:nth-child(4) {
+  fill: #22b78d;
+  animation-delay: 600ms;
+}
+rect:nth-child(5) {
+  fill: #22b88e;
+  animation-delay: 800ms;
+}
+rect:nth-child(6) {
+  fill: #21b48d;
+  animation-delay: 1s;
+}
+rect:nth-child(7) {
+  fill: #1eaf8e;
+  animation-delay: 1.2s;
+}
+rect:nth-child(8) {
+  fill: #1ca48d;
+  animation-delay: 1.4s;
+}
+rect:nth-child(9) {
+  fill: #17968b;
+  animation-delay: 1.6s;
+}
+rect:nth-child(10) {
+  fill: #128688;
+  animation-delay: 1.8s;
+}
+rect:nth-child(11) {
+  fill: #128688;
+  animation-delay: 2s;
+}
+
+/*
+## 3.4.1 Keyframe and animation-name
+*/
+@keyframes doScale {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+rect {
+  /* animation-name: doScale; */
+  /*
+  ## 3.4.2 The duration property
+  */
+  /* animation-duration: 2.2s; */
+  /*
+  ## 3.4.3 The iteraion-count property
+  */
+  /* animation-iteration-count: infinite; */
+  /*
+  ## 3.4.4 The animation shorthand property
+  */
+  animation: doScale 2.2s infinite;
+  /*
+  ## 3.4.6 The transform-origin property
+  */
+  transform-origin: center;
 }
