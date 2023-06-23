@@ -1,13 +1,16 @@
-/*
-## 4.1.1 Fonts
-*/
+/* ## 4.1.1 Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=PT+Serif&display=swap");
 
-body {
+/* ## 4.5.3 Using max-width and a margin value of auto */
+html {
   background-color: #f9f7f1;
+}
+body {
   font-family: "PT Serif", serif;
   color: #404040;
   padding: 0 24px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 h1 {
@@ -20,17 +23,14 @@ h1 {
   font-family: "Oswald", sans-serif;
   line-height: 1;
   */
-  /*
-  ## 4.1.3 The font shorthand property
-  */
+
+  /* ## 4.1.3 The font shorthand property */
   font: 700 4rem/1 "Oswald", sans-serif;
   text-transform: uppercase;
   text-align: center;
 }
 
-/*
-## 4.1.4 Visual hierarchy
-*/
+/* ## 4.1.4 Visual hierarchy */
 h2 {
   font: 3rem/0.95 "Oswald", sans-serif;
   text-transform: uppercase;
@@ -43,9 +43,7 @@ h3 {
   margin-bottom: 12px;
 }
 
-/*
-## 4.1.5 Inline versus block elements
-*/
+/* ## 4.1.5 Inline versus block elements */
 time {
   font: 700 1.5rem "Oswald", sans-serif;
   text-align: center;
@@ -59,4 +57,94 @@ time {
 time sup {
   font-size: 0.875rem;
   font-weight: normal;
+}
+
+/* ## 4.1.6 Quotes */
+blockquote {
+  font: 1.8rem/1.25 "Oswald", sans-serif;
+  margin: 1.5rem 2rem;
+}
+
+blockquote::before {
+  content: open-quote;
+}
+
+blockquote::after {
+  content: close-quote;
+}
+
+/*
+# 4.2 Using CSS counters
+## 4.2.1 The symbols descriptor
+## 4.2.2 The system descriptor
+## 4.2.3 The suffix descriptor
+## 4.2.4 Putting everything together
+## 4.2.5 @counter versus list-style-image
+*/
+@counter-style emoji {
+  symbols: "\2615";
+  system: cyclic;
+  suffix: " ";
+}
+
+article ul {
+  list-style: emoji;
+}
+
+/*
+# 4.3 Styling images
+## 4.3.1 Using the filter property
+*/
+img {
+  filter: grayscale(100%);
+}
+
+/* ## 4.3.3 Formatting captions */
+figure {
+  margin: 0 0 12px 0;
+  text-align: center;
+}
+
+figcaption {
+  font-family: "Oswald", sans-serif;
+}
+
+/*
+# 4.4 Using the CSS Multi-column Layout Module
+## 4.4.1 Creating media queries
+*/
+@media (min-width: 995px) {
+  /* ## 4.4.2 Defining and styling columns */
+  article {
+    column-count: 3;
+    /* ## 4.4.3 Using the column-rule property */
+    column-rule: 2px solid #333333;
+    /* ## 4.4.4 Adjusting spacing with the column-gap property */
+    column-gap: 42px;
+    margin-top: 36px;
+  }
+
+  /* ## 4.4.5 Making content span multiple columns */
+  blockquote {
+    column-span: all;
+  }
+
+  /* ## 4.4.6 Controlling content breaks */
+  figure {
+    break-inside: avoid;
+  }
+
+  /*
+  # 4.5 Adding the finishing touches
+  ## 4.5.1 Justifying and hyphenating text
+  */
+  p {
+    text-align: justify;
+    hyphens: auto;
+  }
+  /* ## 4.5.2 Wrapping the text around the image */
+  figure {
+    float: left;
+    margin-right: 24px;
+  }
 }
